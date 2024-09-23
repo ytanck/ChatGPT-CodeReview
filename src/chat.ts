@@ -6,10 +6,11 @@ export class Chat {
     this.chatAPI = new ChatGPTAPI({
       apiKey: apikey,
       apiBaseUrl:
-        process.env.OPENAI_API_ENDPOINT || 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+        'https://dashscope.aliyuncs.com/compatible-mode/v1',
         //process.env.OPENAI_API_ENDPOINT || 'https://api.openai.com/v1',
       completionParams: {
-        model: process.env.MODEL || 'gpt-3.5-turbo',
+        model: 'qwen-turbo',
+        //model: process.env.MODEL || 'gpt-3.5-turbo',
         temperature: +(process.env.temperature || 0) || 1,
         top_p: +(process.env.top_p || 0) || 1,
         max_tokens: process.env.max_tokens
